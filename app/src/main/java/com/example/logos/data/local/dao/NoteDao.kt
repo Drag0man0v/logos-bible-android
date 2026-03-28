@@ -32,6 +32,9 @@ interface NoteDao{
     @Query("SELECT * FROM notes where book=:book")
     suspend fun getSortedByBook(book: Int): List<NoteEntity>
 
+    @Query("SELECT * FROM notes WHERE book = :book AND chapter = :chapter")
+    fun getForChapter(book: Int, chapter: Int): Flow<List<NoteEntity>>
+
     @Query("Select * FROM notes where book <= 39")
     suspend fun getOldTestament(): List<NoteEntity>
 
