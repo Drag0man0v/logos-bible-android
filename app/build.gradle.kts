@@ -43,6 +43,13 @@ android {
     }
 }
 
+// TODO: Investigate Hilt/JavaPoet dependency conflict.
+// Temporary workaround for hiltAggregateDepsDebug crash
+// Hilt uses a different code generation mechanism
+hilt {
+    enableAggregatingTask = false
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

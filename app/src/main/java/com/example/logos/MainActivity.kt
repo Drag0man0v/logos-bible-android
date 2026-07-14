@@ -17,7 +17,9 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.logos.ui.theme.LogosTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint//connect activity to hilt "system"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
